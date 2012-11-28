@@ -1,8 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package superbot;
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UIManager;
 
 /**
  *
@@ -10,11 +14,15 @@ package superbot;
  */
 public class SuperBot {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    static String OS = System.getProperty("os.name");
+    public static void main(String[] args) throws Exception {
+        if(OS.contains("Windows"))
+        {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } else {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+        }
+        
         new mainPanel().setVisible(true);
     }
 }
